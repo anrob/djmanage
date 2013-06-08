@@ -1,0 +1,22 @@
+<%#= debug response %>
+<%#= @myactcode %>
+<%= @contracts.count %>
+<table>
+
+    <th>Date of Event</th>
+    <th>Client Name</th>
+    <th>Act Booked</th>
+    <th>Contract Status</th>
+    <th>Location</th>
+    <th>Event Time</th>
+<% @contracts.each do |contract| %>
+ <tr>
+<td><%= link_to "#{contract.date_of_event}", contract %></td>
+<td><%= contract.clientname %></td>
+<td><%= contract.act_booked %></td>
+<td><%= contract.contract_status %></td>
+<td><%= contract.location %></td>
+<td><%= contract.eventtime %></td>
+</tr>
+    <% end %>
+</table>

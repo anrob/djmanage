@@ -1,0 +1,11 @@
+<h3><%= contract.clientname %></h3>
+<h6>Date of Event : <%= contract.date_of_event %></h6>
+
+<%= contract.location %>
+<address><%= contract.eventaddress %></address>
+<hr>
+<h6>Contract Provisions</h6>
+<p><%= contract.contract_provisions.gsub(/"/,'') %></p>
+<hr>
+<h6>Act Notes</h6>
+<p><%= contract.act_notes.gsub(/"/,'') %></p>
