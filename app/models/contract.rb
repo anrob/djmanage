@@ -4,8 +4,6 @@ class Contract < ActiveResource::Base
   #headers["act_code"]  = @myactcode.to_s
   #headers["act_code"]= User.current.act_code
   #self.element_name = "contracts"
-
-
   def clientname
     "#{first_name} #{last_name}"
   end

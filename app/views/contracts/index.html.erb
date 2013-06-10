@@ -1,6 +1,6 @@
 <%#= debug response %>
 <%#= @myactcode %>
-<%= @contracts.count %>
+Total Jobs : <%= @contracts.count %>  ---  Grand Total : <%= number_to_currency(@sum.sum) %>
 <table>
 
     <th>Date of Event</th>

@@ -3,7 +3,8 @@ class ContractsController < ApplicationController
    before_filter :set_current_user
    layout "home"
   def index
-    @contracts = Contract.find(:all, :params => {:act_code => current_user.act_code})
+    @contracts = Contract.find(:all ,:sorted => "date_of_event ASC", :params => {:act_code => current_user.act_code})
+    @sum = @contracts.map {|s| s.contract_price}
   end
 
   def show
