@@ -22,6 +22,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "json_pure"
 
 group :development do
   gem 'meta_request'

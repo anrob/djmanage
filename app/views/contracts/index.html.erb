@@ -1,22 +1,24 @@
 <%#= debug response %>
 <%#= @myactcode %>
-Total Jobs : <%= @contracts.count %>  ---  Grand Total : <%= number_to_currency(@sum.sum) %>
-<table>
-
-    <th>Date of Event</th>
-    <th>Client Name</th>
-    <th>Act Booked</th>
-    <th>Contract Status</th>
-    <th>Location</th>
-    <th>Event Time</th>
+<div class="compact">
 <% @contracts.each do |contract| %>
- <tr>
-<td><%= link_to "#{contract.date_of_event}", contract %></td>
-<td><%= contract.clientname %></td>
-<td><%= contract.act_booked %></td>
-<td><%= contract.contract_status %></td>
-<td><%= contract.location %></td>
-<td><%= contract.eventtime %></td>
-</tr>
-    <% end %>
-</table>
+<span class="label"><%= Date.parse(contract.date_of_event).to_s(:long) %></span>
+		<ul class="small-block-grid-4">
+		  <li><%=link_to contract.act_booked, contract %></li>
+		  <li><%= contract.contract_status %></li>
+		  <li><%= contract.eventtime %></li>
+		  <li><%= contract.contract_number %></li>
+		</ul>
+			<p><dt>Client: <%= contract.clientname %></dt> <dt><%= contract.clientcontact %></dt></p>
+			<p><dt><b><%= contract.type_of_event %> </b></dt>Location: <%= contract.longaddress %></p>
+			<ul class="small-block-grid-3 small-text">
+				<li><b>Contract Price:<%= contract.contract_price %></b></li>
+				<li><b>Net:<%= contract.act_net %></b></li>
+				<li><b>Agent:<%= contract.agent %></b></li>
+			</ul>
+			<p class="medium-text"><b>Contract Provisions:</b> <%= contract.contract_provisions.gsub(/"/,'')%></p>
+			<p class="medium-text"><b>Act Notes:</b> <%= contract.act_notes.gsub(/"/,'')%></p>
+			
+		<hr>
+<% end %>
+</div>
