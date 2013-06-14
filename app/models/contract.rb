@@ -1,6 +1,6 @@
 class Contract < ActiveResource::Base
-  #self.site = "http://localhost:3000/api/v1"
-  self.site = "http://108.28.122.40:3000/api/v1"
+  self.site = "http://localhost:3000/api/v1"
+  #self.site = "http://108.28.122.40:3000/api/v1"
   headers['X-AUTH-TOKEN'] = '0685052759566ec7c7add80261194158'
   #resourcify
   #headers["act_code"]  = @myactcode.to_s

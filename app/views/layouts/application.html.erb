@@ -50,6 +50,7 @@
   <% if user_signed_in? %>
     <li><%= link_to "Calendar", "/path1"  %></li>
  <li><%= link_to "Staff", "/path1"  %></li>
+<li><%= link_to "Account", edit_user_registration_path %></li>
               <li><%= link_to "Signout", destroy_user_session_path  %></li>
             <% end %>
             </ul>
