@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 gem 'devise'
+gem "twitter-bootstrap-rails"
 
 
 # Gems used only for assets and not required
@@ -17,7 +18,7 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
-  gem 'zurb-foundation', '~> 4.0.0'
+  #gem 'zurb-foundation', '~> 4.0.0'
   gem 'uglifier', '>= 1.0.3'
 end
 
