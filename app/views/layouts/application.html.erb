@@ -44,12 +44,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Djmanage</a>
+          <%= link_to "ACT-MANAGE", root_path, :class => "brand"%>
           <div class="container nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+  <% if user_signed_in? %>
+    <li><%= link_to "Calendar", "/path1"  %></li>
+ <li><%= link_to "Staff", "/path1"  %></li>
+              <li><%= link_to "Signout", destroy_user_session_path  %></li>
+            <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -64,12 +66,15 @@
           </div>
           <div class="span3">
             <div class="well sidebar-nav">
+     <% if user_signed_in? %>
               <h3>Sidebar</h3>
               <ul class="nav nav-list">
+
                 <li class="nav-header">Sidebar</li>
                 <li><%= link_to "Link1", "/path1"  %></li>
                 <li><%= link_to "Link2", "/path2"  %></li>
                 <li><%= link_to "Link3", "/path3"  %></li>
+                 <% end %>
               </ul>
             </div><!--/.well -->
           </div><!--/span-->
